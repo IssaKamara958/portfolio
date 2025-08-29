@@ -21,6 +21,7 @@ Mon Portfolio
 - [Déploiement sur Netlify](#déploiement-sur-netlify)
 - [Connexion SSH avec GitHub](#connexion-ssh-avec-github)
 - [Contribuer](#contribuer)
+- [Remerciements](#remerciements)
 - [Licence](#licence)
 - [Contact](#contact)
 
@@ -35,12 +36,13 @@ Le portfolio est conçu avec **React.js**, et utilise **React Router**, **Framer
 
 ## Technologies utilisées
 - **Frontend** : React.js, HTML5, CSS3
+- **Backend-as-a-Service** : Supabase (pour la gestion des commentaires)
 - **Routing** : react-router-dom
 - **Animations** : framer-motion
 - **SEO & meta tags** : react-helmet
 - **Versioning** : Git & GitHub
 - **Déploiement** : Netlify
-- **Outils** : VS Code, Node.js, npm
+- **Outils** : VS Code, Node.js, npm, Gemini, FirebaseStudio, ChatGPT
 
 ---
 
@@ -50,8 +52,8 @@ Le portfolio est conçu avec **React.js**, et utilise **React Router**, **Framer
 - Animations au scroll avec **Framer Motion**
 - SEO optimisé avec **React Helmet**
 - Formulaire de contact pour prise de contact rapide
-- Design responsive adapté aux mobiles et tablettes
 - Page Devis pour demandes de devis personnalisés
+- Section commentaires sous les projets avec authentification GitHub via Supabase
 
 ---
 
@@ -65,6 +67,9 @@ issa-portfolio/
 ├── src/
 │ ├── components/
 │ │ ├── About.js
+│ │ ├── Auth/Auth.js
+│ │ ├── Comments/Comment.js
+│ │ ├── Comments/Comments.js
 │ │ ├── Contact.js
 │ │ ├── Cv.js
 │ │ ├── Devis.js
@@ -82,9 +87,6 @@ issa-portfolio/
 ├── package.json
 └── README.md
 
-yaml
-Copier le code
-
 ---
 
 ## Installation et exécution
@@ -93,80 +95,86 @@ Copier le code
 ```bash
 git clone git@github.com:IssaKamara958/portfolio.git
 cd portfolio
-Installer les dépendances :
-
-bash
-Copier le code
+```
+2. **Installer les dépendances :**
+```bash
 npm install
-Lancer le serveur de développement :
-
-bash
-Copier le code
+```
+3. **Lancer le serveur de développement :**
+```bash
 npm start
+```
 Le site sera accessible sur http://localhost:3000
 
-Déploiement sur Netlify
-Crée un build du projet :
+---
 
-bash
-Copier le code
+## Déploiement sur Netlify
+1. **Créer un build du projet :**
+```bash
 npm run build
-Déploie le dossier build/ sur Netlify via l’interface ou GitHub Integration.
+```
+2. **Déployer le dossier `build/` sur Netlify** via l’interface ou l'intégration GitHub.
+3. **Configurer le domaine personnalisé** si nécessaire.
 
-Configure le domaine personnalisé si nécessaire.
+---
 
-Connexion SSH avec GitHub
+## Connexion SSH avec GitHub
 Pour pousser vers GitHub sans mot de passe :
 
-Générer une clé SSH si ce n’est pas déjà fait :
-
-bash
-Copier le code
+1. **Générer une clé SSH** si ce n’est pas déjà fait :
+```bash
 ssh-keygen -t ed25519 -C "issakamara958@gmail.com"
-Copier le contenu de la clé publique id_ed25519.pub :
-
-bash
-Copier le code
+```
+2. **Copier le contenu de la clé publique** `id_ed25519.pub` :
+```bash
 cat ~/.ssh/id_ed25519.pub
-Ajouter la clé sur GitHub :
-
-Settings → SSH and GPG keys → New SSH Key → coller la clé
-
-Modifier l’URL du dépôt pour SSH :
-
-bash
-Copier le code
+```
+3. **Ajouter la clé sur GitHub** :
+   - *Settings → SSH and GPG keys → New SSH Key → coller la clé*
+4. **Modifier l’URL du dépôt pour SSH** :
+```bash
 git remote set-url origin git@github.com:IssaKamara958/portfolio.git
-Tester la connexion :
-
-bash
-Copier le code
+```
+5. **Tester la connexion** :
+```bash
 ssh -T git@github.com
-Contribuer
-Fork le projet
+```
 
-Crée une branche (git checkout -b feature/nom-de-ta-fonctionnalité)
+---
 
-Commit tes changements (git commit -m 'Ajout de ma fonctionnalité')
+## Contribuer
+1.  **Fork** le projet
+2.  Crée une branche (`git checkout -b feature/nom-de-ta-fonctionnalité`)
+3.  Commit tes changements (`git commit -m 'Ajout de ma fonctionnalité'`)
+4.  Push (`git push origin feature/nom-de-ta-fonctionnalité`)
+5.  Crée une **Pull Request**
 
-Push (git push origin feature/nom-de-ta-fonctionnalité)
+---
 
-Crée une Pull Request
+## Remerciements
 
-Licence
-Ce projet est sous licence MIT. Voir le fichier LICENSE pour plus de détails.
+Je tiens à exprimer ma profonde gratitude envers les personnes et les outils qui ont été essentiels à la réalisation de ce projet :
 
-Contact
-Nom : Issa Kamara
+*   **Mamadou Diagne (Genova - Dofbi)** : Un professeur et un mentor dont l'enseignement et les conseils ont été inestimables pour guider mes pas dans le monde du développement.
+*   **Les outils d'IA** qui m'ont accompagné au quotidien :
+    *   **Gemini** & **FirebaseStudio** pour leur assistance technique.
+    *   **ChatGPT**, mon fidèle compagnon de route.
+*   **Les technologies et services** qui ont rendu ce projet possible :
+    *   **Supabase** et **Netlify** pour leurs plateformes robustes et simples d'utilisation.
 
-Email : issakamara958@gmail.com
+---
 
-Portfolio en ligne : https://issa-portfeuil.netlify.app
+## Licence
+Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 
-Téléphone : +221 77 682 84 41
+---
 
-LinkedIn : linkedin.com/in/issakamara
+## Contact
+- **Nom** : Issa Kamara
+- **Email** : issakamara958@gmail.com
+- **Portfolio en ligne** : https://issa-portfeuil.netlify.app
+- **Téléphone** : +221 77 682 84 41
+- **LinkedIn** : [linkedin.com/in/issakamara](https://www.linkedin.com/in/issakamara)
+- **GitHub** : [github.com/IssaKamara958](https://github.com/IssaKamara958)
 
-GitHub : github.com/IssaKamara958
-
-« Si on ne met rien sur la table, on n’a rien sur cette même table. » — Issa Kamara
+> « Si on ne met rien sur la table, on n’a rien sur cette même table. » — Issa Kamara
