@@ -1,0 +1,175 @@
+.cv-wrapper {
+  background-color: #0a192f;
+  padding: 40px 20px;
+  font-family: 'Montserrat', sans-serif;
+  color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.cv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 800px;
+  width: 100%;
+  background: #112240; 
+  color: #e0e0e0; 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.left {
+  width: 100%;
+  max-width: 260px;
+  background-color: #64ffda; 
+  color: #0a192f;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.left img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 3px solid #0a192f;
+}
+
+.left h2 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: #0a192f;
+}
+
+.left p.role {
+  font-size: 14px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #0a192f; 
+}
+
+.section-title {
+  font-size: 13px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #0a192f;
+  width: 100%;
+  padding-bottom: 5px;
+  color: #0a192f;
+}
+
+.left p,
+.left a {
+  font-size: 12.5px;
+  margin: 6px 0;
+  color: #0a192f;
+  text-align: center;
+  word-break: break-word;
+}
+
+.left a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.right {
+  flex: 1;
+  padding: 40px 30px;
+  background: #112240;
+  color: #e0e0e0;
+}
+
+.right h1 {
+  font-size: 24px;
+  color: #64ffda;
+  margin-bottom: 10px;
+}
+
+.right h3 {
+  font-size: 17px;
+  margin-top: 30px;
+  color: #64ffda;
+}
+
+.right p,
+.right li {
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+.right ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+button#downloadBtn {
+  padding: 10px 20px;
+  background-color: #64ffda;
+  color: #0a192f;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+button#downloadBtn:hover {
+  background-color: #52e6c7;
+}
+
+@media screen and (max-width: 768px) {
+  .cv {
+    flex-direction: column;
+  }
+
+  .left, .right {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .right {
+    padding: 30px 20px;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  .cv-wrapper {
+    padding: 0;
+  }
+
+  .cv {
+    width: 210mm;
+    height: 297mm;
+    box-shadow: none;
+    border-radius: 0;
+    background: white;
+    color: black;
+  }
+  
+  .left{
+    background-color: #ccc;
+    color: black;
+  }
+
+  .left, .right {
+    padding: 20px;
+  }
+
+  button#downloadBtn {
+    display: none;
+  }
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import "./Footer.css";
 import { FaFacebook, FaTwitter, FaGithub } from 'react-icons/fa'; // Utilisation des icônes des réseaux sociaux
 
 const Footer = () => {
@@ -23,6 +24,13 @@ const Footer = () => {
         <div className="footer-links">
           <a href="/privacy-policy" aria-label="Politique de confidentialité">Politique de confidentialité</a>
           <a href="/terms-of-service" aria-label="Conditions d'utilisation">Conditions d'utilisation</a>
+        </div>
+        <div className="comments-section">
+          <h3>Leave a Comment</h3>
+          <form>
+            <textarea placeholder="Your comment..." rows="4"></textarea>
+            <button type="submit">Submit Comment</button>
+          </form>
         </div>
       </div>
     </footer>

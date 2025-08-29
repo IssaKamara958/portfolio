@@ -1,0 +1,75 @@
+
+.projects {
+  padding: 50px;
+  background-color: #0a192f;
+  color: #e0e0e0;
+}
+
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* The <a> tag is now the .project container */
+.project {
+  position: relative;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  color: #fff;
+  text-decoration: none;
+}
+
+.project:hover {
+  transform: scale(1.05);
+}
+
+/* This is the overlay with the text */
+.project-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(10, 25, 47, 0.85); /* Darker overlay for better text visibility */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Show the overlay on hover */
+.project:hover .project-info {
+  opacity: 1;
+}
+
+.project-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #64ffda;
+}
+
+.project-info p {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .project-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-list {
+    grid-template-columns: 1fr;
+  }
+}
