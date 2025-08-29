@@ -5,7 +5,7 @@ Mon Portfolio
 ![Portfolio Screenshot](https://issa-portfeuil.netlify.app/screenshot.png)  
 *Capture d’écran du portfolio en ligne.*
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/TON_BADGE_NETLIFY/deploy-status)](https://app.netlify.com/sites/issa-portfeuil/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d2ac08b6-29e7-4b4a-9a87-0e63ec2a08cd/deploy-status)](https://app.netlify.com/projects/issa-portfeuil/deploys)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![React](https://img.shields.io/badge/React-17.0-blue?logo=react)](https://reactjs.org/)
 [![GitHub issues](https://img.shields.io/github/issues/IssaKamara958/portfolio)](https://github.com/IssaKamara958/portfolio/issues)
