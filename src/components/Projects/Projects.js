@@ -9,7 +9,7 @@ import santeScreenshot from "../../assets/images/sante.jpg";
 const projectsData = [
   {
     title: "Kou Ayé ?",
-    description: "Application web et mobile fournissant les informations sur les pharmacies de garde, incluant l\'heure de garde, la localisation, et l\'itinéraire.",
+    description: "Application web et mobile fournissant les informations sur les pharmacies de garde, incluant l'heure de garde, la localisation, et l'itinéraire.",
     url: "https://kou-aye.netlify.app/",
     image: kouAyeScreenshot,
   },
@@ -33,7 +33,7 @@ const projectsData = [
   },
   {
     title: "Gestion des assistances Santé",
-    description: "Applications destinées à faciliter l\'accès à la santé pour tous, avec gestion des services médicaux.",
+    description: "Applications destinées à faciliter l'accès à la santé pour tous, avec gestion des services médicaux.",
     url: "https://kou-aye.netlify.app/",
     image: santeScreenshot,
   },
