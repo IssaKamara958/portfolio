@@ -20,7 +20,8 @@ export async function getComments(projectId) {
     .order('created_at', { ascending: false });
 
   if (error) {
-    console.error('Error fetching comments:', error);
+    console.error('Error fetching comments:');
+    console.error(error);
     return [];
   }
 
@@ -48,7 +49,8 @@ export async function addComment(projectId, content) {
     .single();
 
   if (error) {
-    console.error('Error adding comment:', error);
+    console.error('Error adding comment:');
+    console.error(error);
     return null;
   }
 
@@ -68,7 +70,8 @@ export async function deleteComment(commentId) {
     .eq('id', commentId);
 
   if (error) {
-    console.error('Error deleting comment:', error);
+    console.error('Error deleting comment:');
+    console.error(error);
     return false;
   }
 
@@ -85,7 +88,8 @@ export async function getProject(projectId) {
     .single();
 
   if (error) {
-    console.error('Error fetching project:', error);
+    console.error('Error fetching project:');
+    console.error(error);
     return null;
   }
 
@@ -99,7 +103,8 @@ export async function getAllProjects() {
     .order('created_at', { ascending: false });
 
   if (error) {
-    console.error('Error fetching projects:', error);
+    console.error('Error fetching projects:');
+    console.error(error);
     return [];
   }
 
