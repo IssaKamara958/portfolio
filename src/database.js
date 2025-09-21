@@ -1,112 +1,73 @@
 import { supabase } from './supabaseClient';
 
-// ... (les fonctions getProject et getAllProjects restent inchangées)
-
 /**
- * Fetches all approved comments for a given project, along with the commenter's username.
+ * Fetches all approved guestbook entries, along with the commenter's username.
  *
- * @param {number} projectId The ID of the project to fetch comments for.
- * @returns {Promise<Array<object>>} An array of comment objects with associated profiles.
+ * @returns {Promise<Array<object>>} An array of guestbook entries with associated profiles.
+ * @throws {Error} Throws an error if the fetch fails.
  */
-export async function getComments(projectId) {
-  const { data: comments, error } = await supabase
+export async function getGuestbookEntries() {
+  const { data, error } = await supabase
     .from('comments')
     .select(`
       *,
       profiles ( username )
     `)
-    .eq('project_id', projectId)
     .eq('approved', true)
     .order('created_at', { ascending: false });
 
   if (error) {
-    console.error('Error fetching comments:');
-    console.error(error);
-    return [];
+    console.error('Error fetching guestbook entries:', error);
+    throw new Error('Could not fetch guestbook entries.');
   }
 
-  return comments;
+  return data;
 }
 
 /**
- * Adds a new comment to a project.
+ * Adds a new guestbook entry.
  *
- * @param {number} projectId The ID of the project.
- * @param {string} content The content of the comment.
- * @returns {Promise<object|null>} The newly created comment object.
+ * @param {string} content The content of the entry.
+ * @param {string} userId The ID of the user adding the entry.
+ * @returns {Promise<object>} The newly created guestbook entry.
+ * @throws {Error} Throws an error if the insertion fails.
  */
-export async function addComment(projectId, content) {
-    const { data: { user } } = await supabase.auth.getUser();
-    if (!user) {
-        console.error("User not logged in.");
-        return null;
-    }
+export async function addGuestbookEntry(content, userId) {
+  if (!userId) {
+      throw new Error("User not logged in.");
+  }
 
-  const { data: comment, error } = await supabase
+  const { data, error } = await supabase
     .from('comments')
-    .insert([{ project_id: projectId, user_id: user.id, content: content, approved: false }])
+    .insert([{ user_id: userId, content: content, approved: false }])
     .select()
     .single();
 
   if (error) {
-    console.error('Error adding comment:');
-    console.error(error);
-    return null;
+    console.error('Error adding guestbook entry:', error);
+    throw new Error('Could not add guestbook entry.');
   }
 
-  return comment;
+  return data;
 }
 
 /**
- * Deletes a comment by its ID.
+ * Deletes a guestbook entry by its ID.
  *
- * @param {number} commentId The ID of the comment to delete.
- * @returns {Promise<boolean>} True if the deletion was successful, false otherwise.
+ * @param {number} entryId The ID of the entry to delete.
+ * @returns {Promise<boolean>} True if the deletion was successful.
+ * @throws {Error} Throws an error if the deletion fails.
  */
-export async function deleteComment(commentId) {
+export async function deleteGuestbookEntry(entryId) {
   const { error } = await supabase
     .from('comments')
     .delete()
-    .eq('id', commentId);
+    .eq('id', entryId);
 
   if (error) {
-    console.error('Error deleting comment:');
-    console.error(error);
-    return false;
+    console.error('Error deleting guestbook entry:', error);
+    throw new Error('Could not delete guestbook entry.');
   }
 
   return true;
-}
-
-// --- Fonctions existantes ---
-
-export async function getProject(projectId) {
-  const { data: project, error } = await supabase
-    .from('projects')
-    .select('*')
-    .eq('id', projectId)
-    .single();
-
-  if (error) {
-    console.error('Error fetching project:');
-    console.error(error);
-    return null;
-  }
-
-  return project;
-}
-
-export async function getAllProjects() {
-  const { data: projects, error } = await supabase
-    .from('projects')
-    .select('*')
-    .order('created_at', { ascending: false });
-
-  if (error) {
-    console.error('Error fetching projects:');
-    console.error(error);
-    return [];
-  }
-
-  return projects;
 }

@@ -74,6 +74,21 @@ const Cv = () => {
             Développeur web passionné par les technologies modernes, je conçois des solutions dynamiques et sécurisées (sites web, plateformes, outils internes). J’interviens aussi en maintenance informatique, marketing digital, consultance IT et pilotage de projets numériques.
           </p>
 
+          <h3>Activité GitHub</h3>
+          <div className="github-activity">
+            <p>
+              Profil dynamique avec <strong>21 dépôts</strong> et plus de <strong>86 contributions</strong> sur l'année écoulée. Contributeur actif sur des projets variés, démontrant une compétence pratique en développement et collaboration.
+            </p>
+            <ul>
+              <li><strong>Portfolio Immersif :</strong> Développement d'une expérience de portfolio interactive avec React.</li>
+              <li><strong>Chackor-Shop :</strong> Contribution à une plateforme e-commerce en TypeScript.</li>
+              <li><strong>Art Multi-Services :</strong> Création d'un site vitrine pour une entreprise locale.</li>
+            </ul>
+            <p>
+              Retrouvez l'ensemble de mes projets sur mon profil : <a href="https://github.com/IssaKamara958" target="_blank" rel="noreferrer">github.com/IssaKamara958</a>
+            </p>
+          </div>
+
           <h3>Expériences</h3>
           <p><strong>Responsable légal – Infomaniak</strong><br /><em>2023 – Présent</em></p>
           <ul>

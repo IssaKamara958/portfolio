@@ -110,6 +110,25 @@
   margin-bottom: 20px;
 }
 
+.github-activity {
+  margin-top: 20px;
+  padding-left: 15px;
+  border-left: 3px solid #64ffda;
+}
+
+.github-activity strong {
+  color: #64ffda;
+}
+
+.github-activity a {
+  color: #64ffda;
+  text-decoration: none;
+}
+
+.github-activity a:hover {
+  text-decoration: underline;
+}
+
 button#downloadBtn {
   padding: 10px 20px;
   background-color: #64ffda;

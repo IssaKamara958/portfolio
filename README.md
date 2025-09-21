@@ -36,7 +36,7 @@ Le portfolio est conçu avec **React.js**, et utilise **React Router**, **Framer
 
 ## Technologies utilisées
 - **Frontend** : React.js, HTML5, CSS3
-- **Backend-as-a-Service** : Supabase (pour la gestion des commentaires)
+- **Backend-as-a-Service** : Supabase (pour la gestion du livre d'or)
 - **Routing** : react-router-dom
 - **Animations** : framer-motion
 - **SEO & meta tags** : react-helmet
@@ -53,7 +53,7 @@ Le portfolio est conçu avec **React.js**, et utilise **React Router**, **Framer
 - SEO optimisé avec **React Helmet**
 - Formulaire de contact pour prise de contact rapide
 - Page Devis pour demandes de devis personnalisés
-- Section commentaires sous les projets avec authentification GitHub via Supabase
+- Section **Livre d'or** avec authentification GitHub via Supabase
 
 ---
 
@@ -66,18 +66,18 @@ issa-portfolio/
 │
 ├── src/
 │ ├── components/
-│ │ ├── About.js
+│ │ ├── About/About.js
 │ │ ├── Auth/Auth.js
-│ │ ├── Comments/Comment.js
-│ │ ├── Comments/Comments.js
-│ │ ├── Contact.js
-│ │ ├── Cv.js
-│ │ ├── Devis.js
+│ │ ├── Guestbook/Guestbook.js
+│ │ ├── Guestbook/GuestbookComment.js
+│ │ ├── Contact/Contact.js
+│ │ ├── Cv/Cv.js
+│ │ ├── Devis/Devis.js
 │ │ ├── Footer.js
-│ │ ├── Header.js
+│ │ ├── Header/Header.js
 │ │ ├── Navbar.js
 │ │ ├── Projects.js
-│ │ └── Skills.js
+│ │ └── Skills/Skills.js
 │ │
 │ ├── App.js
 │ ├── App.css
