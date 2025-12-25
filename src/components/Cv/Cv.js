@@ -10,7 +10,7 @@ const Cv = () => {
   const cvRef = useRef();
 
   useEffect(() => {
-    AOS.init({ duration: 1000 });
+    AOS.init({ duration: 1000, once: true });
   }, []);
 
   const downloadPDF = async () => {
@@ -19,12 +19,11 @@ const Cv = () => {
     button.style.display = "none";
     await new Promise(resolve => setTimeout(resolve, 300));
 
-    html2canvas(element, { scale: 2 }).then(canvas => {
+    html2canvas(element, { scale: 2, useCORS: true }).then(canvas => {
       const imgData = canvas.toDataURL("image/png");
       const pdf = new jsPDF("p", "mm", "a4");
-      const imgProps = pdf.getImageProperties(imgData);
       const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+      const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
       pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
       pdf.save("CV_Issa_Kamara.pdf");
       button.style.display = "inline-block";
@@ -34,104 +33,109 @@ const Cv = () => {
   return (
     <div id="cv" className="cv-wrapper" data-aos="fade-up">
       <div className="cv" ref={cvRef}>
+
+        {/* ==== COLONNE GAUCHE ==== */}
         <div className="left">
           <img src={issa} alt="Issa KAMARA" />
           <h2>Issa KAMARA</h2>
-          <p className="role">Développeur Web | MANAGER</p>
+          <p className="role">
+            Informaticien Hardware & Software <br />
+            Développeur Web UX/UI <br />
+            Formateur Informatique Pro
+          </p>
 
           <div className="section-title">Contact</div>
+          <p>📍 Parcelles Assainies U1, Thiès</p>
           <p>📧 issakamara958@gmail.com</p>
           <p>📞 +221 77 682 84 41</p>
 
-          <div className="section-title">Portfolios & Sites</div>
-          <a href="https://issa-portfeuil.netlify.app" target="_blank" rel="noreferrer">issa-portfeuil.netlify.app</a>
-          <a href="https://issa-kamara.netlify.app" target="_blank" rel="noreferrer">issa-kamara.netlify.app</a>
-          <a href="https://chackororg-shop.netlify.app" target="_blank" rel="noreferrer">chackororg-shop.netlify.app</a>
+          <div className="section-title">Sites & Projets</div>
+          <a href="https://issa-kamara-portfolio-3d.web.app/" target="_blank" rel="noreferrer">
+            Portfolio 3D
+          </a>
+          <a href="https://chackor-shop.netlify.app/" target="_blank" rel="noreferrer">
+            Chackor Shop (E-commerce)
+          </a>
+          <a href="https://issa-portfeuil.netlify.app/" target="_blank" rel="noreferrer">
+            Portfolio CV
+          </a>
 
-          <div className="section-title">Réseaux sociaux</div>
-          <a href="https://github.com/IssaKamara958" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://www.facebook.com/profile.php?id=100074472115745" target="_blank" rel="noreferrer">Facebook</a>
+          <div className="section-title">GitHub</div>
+          <a href="https://github.com/IssaKamara958" target="_blank" rel="noreferrer">
+            github.com/IssaKamara958
+          </a>
 
-          <div className="section-title">Responsabilités</div>
-          <p><strong>Responsable légal</strong> – Compte Infomaniak</p>
-
-          <div className="section-title">Services utilisés</div>
+          <div className="section-title">Services maîtrisés</div>
           <ul>
-            <li>kSuite & kDrive</li>
-            <li>Service Mail</li>
-            <li>Hébergement & Domaine</li>
-            <li>Streaming Radio / Vidéo</li>
-            <li>Newsletter</li>
-            <li>AI Tools, NAS Synology</li>
-            <li>WordPress & Site Creator</li>
-            <li>Swiss Backup, VPS, Cloud</li>
+            <li>Windows & Maintenance PC</li>
+            <li>Word / Excel / Organisation</li>
+            <li>IA (ChatGPT, IA bureautique)</li>
+            <li>ERP Dolibarr</li>
+            <li>Git, Netlify, Infomaniak</li>
+            <li>Cloud, Hébergement, Email Pro</li>
           </ul>
         </div>
 
+        {/* ==== COLONNE DROITE ==== */}
         <div className="right">
-          <h1>Profil</h1>
+          <h1>Profil professionnel</h1>
           <p>
-            Développeur web passionné par les technologies modernes, je conçois des solutions dynamiques et sécurisées (sites web, plateformes, outils internes). J’interviens aussi en maintenance informatique, marketing digital, consultance IT et pilotage de projets numériques.
+            Entrepreneur indépendant et informaticien polyvalent, j’accompagne
+            les professionnels, commerçants et PME dans la maîtrise de leur
+            ordinateur, la bureautique, l’automatisation des tâches et
+            l’utilisation de solutions numériques modernes (ERP, IA, web).
           </p>
+
+          <h3>Formation & Accompagnement Pro</h3>
+          <ul>
+            <li>Cours particuliers à domicile (Thiès)</li>
+            <li>Organisation du poste de travail Windows</li>
+            <li>Excel, gestion de stock, facturation</li>
+            <li>Utilisation de l’IA comme assistant professionnel</li>
+            <li>Implémentation et formation Dolibarr</li>
+          </ul>
 
           <h3>Activité GitHub</h3>
           <div className="github-activity">
             <p>
-              Profil dynamique avec <strong>21 dépôts</strong> et plus de <strong>86 contributions</strong> sur l'année écoulée. Contributeur actif sur des projets variés, démontrant une compétence pratique en développement et collaboration.
+              Développeur actif avec plusieurs projets publics et privés en
+              <strong> TypeScript, JavaScript, PHP et Python</strong>.
             </p>
             <ul>
-              <li><strong>Portfolio Immersif :</strong> Développement d'une expérience de portfolio interactive avec React.</li>
-              <li><strong>Chackor-Shop :</strong> Contribution à une plateforme e-commerce en TypeScript.</li>
-              <li><strong>Art Multi-Services :</strong> Création d'un site vitrine pour une entreprise locale.</li>
+              <li>Portfolio 3D immersif (React / TS)</li>
+              <li>Plateforme e-commerce Chackor Shop</li>
+              <li>Applications utilitaires (QR WiFi, ERP, outils web)</li>
             </ul>
-            <p>
-              Retrouvez l'ensemble de mes projets sur mon profil : <a href="https://github.com/IssaKamara958" target="_blank" rel="noreferrer">github.com/IssaKamara958</a>
-            </p>
           </div>
 
           <h3>Expériences</h3>
-          <p><strong>Responsable légal – Infomaniak</strong><br /><em>2023 – Présent</em></p>
+          <p><strong>Entrepreneur indépendant</strong> — <em>2020 – Présent</em></p>
           <ul>
-            <li>Gestion complète d’un compte Infomaniak</li>
-            <li>Services cloud : newsletter, streaming, etc.</li>
-            <li>Interface légale & technique</li>
+            <li>Formation informatique professionnelle</li>
+            <li>Développement web & maintenance</li>
+            <li>Conseil digital & organisation métier</li>
           </ul>
 
-          <p><strong>Fondateur – Chackor Organisation</strong><br /><em>2023 – Présent</em></p>
+          <p><strong>Fondateur – Chackor Organisation</strong></p>
           <ul>
-            <li>Conception de plateformes digitales</li>
-            <li>Newsletters, formulaires dynamiques, etc.</li>
-            <li>Stratégie digitale & expérience utilisateur</li>
+            <li>Solutions web, e-commerce, branding</li>
+            <li>UX/UI & accompagnement client</li>
           </ul>
 
-          <p><strong>Projet – Sénécom-Digital</strong><br /><em>2022 – Présent</em></p>
-          <ul>
-            <li>Dév. front/back, consultance digitale</li>
-            <li>Stratégie marketing & suivi client</li>
-          </ul>
-
-          <p><strong>Freelance</strong><br /><em>2020 - 2021</em></p>
-          <ul>
-            <li>Portails et portfolios professionnels</li>
-          </ul>
-
-          <h3>Formation</h3>
-          <p><strong>Licence Pro en Dev Web</strong><br />EMAAS – 2019</p>
-
-          <h3>Compétences</h3>
+          <h3>Compétences clés</h3>
           <ul>
             <li><strong>Langages :</strong> HTML, CSS, JS, PHP, SQL</li>
             <li><strong>Frameworks :</strong> React, Bootstrap</li>
             <li><strong>Outils :</strong> Git, Netlify, Infomaniak</li>
-            <li><strong>Maintenance :</strong> Réseau, Hardware</li>
-            <li><strong>Marketing :</strong> SEO, newsletter</li>
+            <li><strong>Systèmes :</strong> Windows, Hardware, Réseau</li>
+            <li><strong>Métiers :</strong> Formation, Productivité, ERP</li>
           </ul>
         </div>
       </div>
 
       <div style={{ textAlign: 'center', marginTop: '30px' }}>
         <button id="downloadBtn" onClick={downloadPDF}>
-          📄 Télécharger en PDF
+          📄 Télécharger le CV (PDF)
         </button>
       </div>
     </div>
