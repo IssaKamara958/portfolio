@@ -24,41 +24,59 @@ const About = () => {
         </motion.h2>
 
         <motion.p variants={fadeUpVariant} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          Je m'appelle Issa KAMARA, développeur web frontend basé à Thiès, Sénégal.
-          Mon parcours est celui d’un autodidacte passionné qui a construit ses compétences
-          avec détermination, curiosité et discipline.
+          Je m'appelle Issa KAMARA, développeur web frontend et entrepreneur basé à Thiès, Sénégal.
+          Mon parcours est celui d’un autodidacte qui a construit ses compétences à travers la pratique,
+          la discipline et la réalisation de projets concrets.
         </motion.p>
 
         <motion.p variants={fadeUpVariant} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          Depuis 2022, j’ai progressivement évolué en développant des projets concrets :
-          applications web, plateformes e-commerce, outils digitaux et expériences 3D interactives.
-          Chaque projet a été une étape pour renforcer mon expertise technique et ma vision produit.
+          Depuis 2022, j’ai développé plusieurs applications web, plateformes digitales et outils métiers,
+          allant de l’e-commerce aux solutions sur mesure pour particuliers et PME. Chaque projet m’a permis
+          de renforcer mon expertise technique et ma compréhension des besoins réels du terrain.
         </motion.p>
+
+        <motion.h3 variants={fadeUpVariant} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+          Chackor Organisation
+        </motion.h3>
+
+        <motion.p variants={fadeUpVariant} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+          Je suis le fondateur de Chackor Organisation, une initiative basée à Thiès qui vise à créer
+          un écosystème local combinant savoir-faire traditionnel, innovation digitale et développement humain.
+        </motion.p>
+
+        <motion.p variants={fadeUpVariant} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+          À travers cette organisation, je travaille à valoriser les talents locaux dans des domaines variés
+          comme l’artisanat, l’agriculture, la technologie et le conseil, en créant un pont entre tradition et modernité.
+        </motion.p>
+
+        <motion.h3 variants={fadeUpVariant} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+          Achakourou : Extension Digitale
+        </motion.h3>
+
+        <motion.p variants={fadeUpVariant} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+          Dans cette dynamique, j’ai lancé Achakourou, une branche digitale structurée autour de plusieurs axes :
+        </motion.p>
+
+        <motion.ul variants={fadeUpVariant} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+          <li><strong>Achakourou Café Touba :</strong> production et distribution de café artisanal local</li>
+          <li><strong>Achakourou Digital Services :</strong> développement web, UI/UX et solutions numériques</li>
+          <li><strong>Achakourou Bana Bana :</strong> plateforme de commerce agricole interrégional</li>
+          <li><strong>Achakourou Consulting :</strong> accompagnement en stratégie, digitalisation et développement personnel</li>
+        </motion.ul>
 
         <motion.h3 variants={fadeUpVariant} initial="hidden" whileInView="visible" viewport={{ once: true }}>
           Compétences & Expertise
         </motion.h3>
 
         <motion.p variants={fadeUpVariant} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          Je conçois des interfaces modernes, performantes et centrées utilisateur avec React,
-          Next.js et TypeScript. J’intègre également des expériences interactives avec Three.js
-          et développe des solutions complètes en utilisant Node.js, Supabase et PostgreSQL.
+          Je développe des interfaces modernes et performantes avec React, Next.js et TypeScript,
+          et j’intègre des expériences interactives avec Three.js. Je conçois également des solutions
+          complètes avec Node.js, Supabase et PostgreSQL.
         </motion.p>
 
         <motion.p variants={fadeUpVariant} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          Mon approche combine design UI/UX, performance web et logique métier pour créer
-          des applications utiles, accessibles et évolutives.
-        </motion.p>
-
-        <motion.h3 variants={fadeUpVariant} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          Expérience & Réalisations
-        </motion.h3>
-
-        <motion.p variants={fadeUpVariant} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          En tant qu’entrepreneur digital, j’ai travaillé sur plusieurs projets réels :
-          plateformes web, solutions e-commerce, outils de gestion et applications métiers.
-          J’accompagne également des particuliers et PME dans leur transformation digitale,
-          la création de sites et l’adoption des outils numériques.
+          Mon approche est centrée sur l’utilisateur, la performance et la création de solutions utiles,
+          adaptées aux réalités locales.
         </motion.p>
 
         <motion.h3 variants={fadeUpVariant} initial="hidden" whileInView="visible" viewport={{ once: true }}>
@@ -66,14 +84,13 @@ const About = () => {
         </motion.h3>
 
         <motion.p variants={fadeUpVariant} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          Mon parcours ne se limite pas au développement. Avec plus de 10 ans d’expérience
-          en art visuel et 6 ans dans l’entrepreneuriat (production de café), j’ai développé
-          une sensibilité particulière au design, à l’expérience utilisateur et à la valeur produit.
+          Avec plus de 10 ans d’expérience en art visuel et 6 ans dans l’entrepreneuriat (production de café),
+          j’apporte une vision qui combine créativité, sens du détail et logique business.
         </motion.p>
 
         <motion.p variants={fadeUpVariant} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          Cette double compétence me permet de créer des solutions à la fois techniques,
-          esthétiques et orientées business.
+          Cette combinaison me permet de créer des produits digitaux à la fois esthétiques,
+          fonctionnels et orientés impact.
         </motion.p>
 
         <motion.h3 variants={fadeUpVariant} initial="hidden" whileInView="visible" viewport={{ once: true }}>
@@ -82,12 +99,12 @@ const About = () => {
 
         <motion.p variants={fadeUpVariant} initial="hidden" whileInView="visible" viewport={{ once: true }}>
           Mon objectif est de contribuer à la digitalisation des PME au Sénégal et en Afrique,
-          en rendant les outils numériques modernes accessibles, utiles et adaptés aux réalités locales.
+          en construisant des solutions accessibles, utiles et durables.
         </motion.p>
 
         <motion.p variants={fadeUpVariant} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          Je construis progressivement des projets à impact, avec l’ambition de créer des plateformes
-          solides et durables.
+          À long terme, je souhaite développer un écosystème solide reliant technologie,
+          économie locale et développement humain.
         </motion.p>
 
         <motion.p
@@ -104,7 +121,7 @@ const About = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          “Transformer les idées en solutions concrètes, et les défis en opportunités.”
+          “Créer des solutions locales, avec une vision globale.”
         </motion.p>
 
         <motion.h3 variants={fadeUpVariant} initial="hidden" whileInView="visible" viewport={{ once: true }}>
@@ -112,9 +129,9 @@ const About = () => {
         </motion.h3>
 
         <motion.p variants={fadeUpVariant} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          Aujourd’hui, je continue d’apprendre, de créer et d’innover chaque jour.
-          Mon parcours est en constante évolution, avec une seule direction :
-          construire des solutions digitales utiles, modernes et impactantes.
+          Aujourd’hui, je continue de construire, d’apprendre et d’innover chaque jour,
+          avec une ambition claire : créer des solutions digitales utiles et contribuer
+          au développement de mon environnement.
         </motion.p>
 
       </div>
