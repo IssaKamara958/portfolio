@@ -38,18 +38,23 @@ const Cv = () => {
         <div className="left">
           <img src={issa} alt="Issa KAMARA" />
           <h2>Issa KAMARA</h2>
+
+          <p className="tagline">
+            "Créer des expériences digitales modernes, utiles et accessibles"
+          </p>
+
           <p className="role">
-            Informaticien Hardware & Software <br />
-            Développeur Web UX/UI <br />
-            Formateur Informatique Pro
+            Développeur Frontend & UI/UX Designer <br />
+            Créateur d’expériences web modernes (React / 3D) <br />
+            Entrepreneur digital & Formateur
           </p>
 
           <div className="section-title">Contact</div>
-          <p>📍 Parcelles Assainies U1, Thiès</p>
+          <p>📍 Thiès, Sénégal</p>
           <p>📧 issakamara958@gmail.com</p>
           <p>📞 +221 77 682 84 41</p>
 
-          <div className="section-title">Sites & Projets</div>
+          <div className="section-title">Projets & Portfolio</div>
           <a href="https://issa-kamara-portfolio-3d.web.app/" target="_blank" rel="noreferrer">
             Portfolio 3D
           </a>
@@ -67,69 +72,81 @@ const Cv = () => {
 
           <div className="section-title">Services maîtrisés</div>
           <ul>
-            <li>Windows & Maintenance PC</li>
-            <li>Word / Excel / Organisation</li>
-            <li>IA (ChatGPT, IA bureautique)</li>
-            <li>ERP Dolibarr</li>
-            <li>Git, Netlify, Infomaniak</li>
-            <li>Cloud, Hébergement, Email Pro</li>
+            <li>Développement web moderne (React / Next.js)</li>
+            <li>UI/UX & Design d’interfaces</li>
+            <li>Automatisation & outils digitaux</li>
+            <li>ERP & solutions métiers</li>
+            <li>Cloud, hébergement & déploiement</li>
+            <li>Formation informatique professionnelle</li>
           </ul>
         </div>
 
         {/* ==== COLONNE DROITE ==== */}
         <div className="right">
+
           <h1>Profil professionnel</h1>
           <p>
-            Entrepreneur indépendant et informaticien polyvalent, j’accompagne
-            les professionnels, commerçants et PME dans la maîtrise de leur
-            ordinateur, la bureautique, l’automatisation des tâches et
-            l’utilisation de solutions numériques modernes (ERP, IA, web).
+            Développeur frontend passionné basé à Thiès, je conçois des applications web modernes,
+            performantes et orientées expérience utilisateur. J’allie créativité artistique,
+            expertise technique et vision entrepreneuriale pour accompagner les particuliers,
+            PME et projets innovants dans leur transformation digitale.
           </p>
 
-          <h3>Formation & Accompagnement Pro</h3>
+          <p>
+            Avec plus de 10 ans d’expérience en art visuel et 6 ans en entrepreneuriat
+            dans le café, j’apporte une approche unique mêlant design, émotion et efficacité.
+          </p>
+
+          <h3>Projets clés</h3>
           <ul>
-            <li>Cours particuliers à domicile (Thiès)</li>
-            <li>Organisation du poste de travail Windows</li>
-            <li>Excel, gestion de stock, facturation</li>
-            <li>Utilisation de l’IA comme assistant professionnel</li>
-            <li>Implémentation et formation Dolibarr</li>
+            <li><strong>Senegal Energy Xool</strong> – Plateforme web d’analyse énergétique</li>
+            <li><strong>Empreinte Parfumée</strong> – Application digitale & branding parfum</li>
+            <li><strong>Chackor Shop</strong> – E-commerce moderne (Next.js)</li>
+            <li><strong>Portfolio 3D</strong> – Expérience immersive avec Three.js</li>
+            <li><strong>Outils web & ERP</strong> – QR, gestion, apps métiers</li>
           </ul>
 
-          <h3>Activité GitHub</h3>
-          <div className="github-activity">
-            <p>
-              Développeur actif avec plusieurs projets publics et privés en
-              <strong> TypeScript, JavaScript, PHP et Python</strong>.
-            </p>
-            <ul>
-              <li>Portfolio 3D immersif (React / TS)</li>
-              <li>Plateforme e-commerce Chackor Shop</li>
-              <li>Applications utilitaires (QR WiFi, ERP, outils web)</li>
-            </ul>
-          </div>
+          <h3>Formation & Accompagnement</h3>
+          <ul>
+            <li>Formation informatique professionnelle (débutant à avancé)</li>
+            <li>Organisation du poste de travail & productivité</li>
+            <li>Excel, gestion, automatisation</li>
+            <li>Utilisation de l’IA comme assistant de travail</li>
+            <li>Mise en place de solutions ERP (Dolibarr)</li>
+          </ul>
 
           <h3>Expériences</h3>
-          <p><strong>Entrepreneur indépendant</strong> — <em>2020 – Présent</em></p>
+          <p><strong>Développeur freelance & entrepreneur digital</strong> — <em>2020 – Présent</em></p>
           <ul>
-            <li>Formation informatique professionnelle</li>
-            <li>Développement web & maintenance</li>
-            <li>Conseil digital & organisation métier</li>
+            <li>Création d’applications web modernes (React, Next.js)</li>
+            <li>Développement de plateformes e-commerce & SaaS</li>
+            <li>Accompagnement digital des PME</li>
+            <li>Formation & coaching informatique</li>
           </ul>
 
           <p><strong>Fondateur – Chackor Organisation</strong></p>
           <ul>
-            <li>Solutions web, e-commerce, branding</li>
-            <li>UX/UI & accompagnement client</li>
+            <li>Solutions digitales, branding & UX/UI</li>
+            <li>Gestion de projets clients & stratégie digitale</li>
           </ul>
 
           <h3>Compétences clés</h3>
           <ul>
-            <li><strong>Langages :</strong> HTML, CSS, JS, PHP, SQL</li>
-            <li><strong>Frameworks :</strong> React, Bootstrap</li>
-            <li><strong>Outils :</strong> Git, Netlify, Infomaniak</li>
-            <li><strong>Systèmes :</strong> Windows, Hardware, Réseau</li>
-            <li><strong>Métiers :</strong> Formation, Productivité, ERP</li>
+            <li><strong>Frontend :</strong> React, Next.js, TypeScript, Three.js</li>
+            <li><strong>Backend :</strong> Node.js, Express, Supabase, PostgreSQL</li>
+            <li><strong>UI/UX :</strong> Figma, Design System</li>
+            <li><strong>Outils :</strong> Git, GitHub, Netlify, Firebase</li>
+            <li><strong>Autres :</strong> SEO, Performance, Responsive design</li>
           </ul>
+
+          <h3>Atouts différenciants</h3>
+          <ul>
+            <li>🎨 10+ ans d’expérience en art visuel</li>
+            <li>☕ 6 ans d’entrepreneuriat</li>
+            <li>🚀 Approche orientée expérience utilisateur</li>
+            <li>🌍 Vision : digitaliser les PME au Sénégal</li>
+          </ul>
+
         </div>
       </div>
 
