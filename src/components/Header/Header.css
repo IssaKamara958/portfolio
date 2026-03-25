@@ -90,32 +90,50 @@
 }
 
 /* IMAGE */
-.image-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-  width: 100%;
-  max-width: 400px;
-}
 
 .image-section img {
-  width: 100%;
-  max-width: 300px;
+  width: 280px;
   height: auto;
 
-  object-fit: contain; /* 🔥 image entière visible */
-  object-position: center;
+  object-fit: contain;
 
-  border-radius: 0; /* ❌ supprime le cercle */
-  border: none;     /* ❌ supprime la bordure */
-  background: none;
+  border: none;
+  border-radius: 0;
+  background: transparent;
 
-  display: block;
+  position: relative;
+  z-index: 2;
+
+  /* 🔥 effet flottant */
+  transform: translateY(-10px);
+
+  /* 🔥 ombre */
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5));
+
+  transition: transform 0.4s ease;
 }
 
 .image-section img:hover {
-  transform: scale(1.05);
+  transform: translateY(-20px) scale(1.03);
+}
+
+.image-section::before {
+  content: "";
+  position: absolute;
+
+  width: 320px;
+  height: 320px;
+
+  background: radial-gradient(
+    circle,
+    rgba(100, 255, 218, 0.15),
+    transparent 70%
+  );
+
+  border-radius: 50%;
+
+  z-index: 1;
 }
 
 /* RESPONSIVE */
