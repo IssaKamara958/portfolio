@@ -94,17 +94,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  width: 100%;
+  max-width: 400px;
 }
 
 .image-section img {
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: 50% 20%; /* 🔥 corrige le visage */
-  border: 3px solid #64ffda;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+
+  object-fit: contain; /* 🔥 image entière visible */
+  object-position: center;
+
+  border-radius: 0; /* ❌ supprime le cercle */
+  border: none;     /* ❌ supprime la bordure */
+  background: none;
+
+  display: block;
 }
 
 .image-section img:hover {
