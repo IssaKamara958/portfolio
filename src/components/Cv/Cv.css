@@ -39,10 +39,11 @@
 .left img {
   width: 120px;
   height: 120px;
-  object-fit: cover;
+  object-fit: contain; /* L'image est entièrement visible */
   border-radius: 50%;
   margin-bottom: 20px;
   border: 3px solid #0a192f;
+  background-color: #fff; /* ou transparent si tu veux */
 }
 
 .left h2 {
