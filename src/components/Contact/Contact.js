@@ -2,43 +2,113 @@ import React, { useState } from "react";
 import "./Contact.css";
 
 const Contact = () => {
-  const [message, setMessage] = useState("");
-  const [status, setStatus] = useState(null); // Pour afficher le statut du message envoyé
+  const [form, setForm] = useState({
+    nom: "",
+    telephone: "",
+    service: "",
+    message: "",
+  });
+
+  const [status, setStatus] = useState("");
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
   const sendMessage = () => {
-    if (!message.trim()) {
-      setStatus("Veuillez entrer un message.");
+    const { nom, telephone, service, message } = form;
+
+    // 🔒 Validation
+    if (!nom || !telephone || !message) {
+      setStatus("⚠️ Veuillez remplir les champs obligatoires.");
       return;
     }
 
-    const whatsappURL = `https://wa.me/221776828441?text=${encodeURIComponent(message)}`;
+    // 📩 Message structuré
+    const fullMessage = `
+📩 Nouvelle demande - Senegal Energy Xool
 
-    // Ouvrir WhatsApp et gérer le cas où l'URL ne fonctionne pas
-    try {
-      window.open(whatsappURL, "_blank");
-      setStatus("Message envoyé avec succès!");
-    } catch (error) {
-      setStatus("Une erreur s'est produite. Veuillez réessayer.");
-    }
+👤 Nom : ${nom}
+📞 Téléphone : ${telephone}
+🛠️ Service : ${service || "Non précisé"}
+
+💬 Message :
+${message}
+
+---
+Envoyé depuis le site web
+`;
+
+    const whatsappURL = `https://wa.me/221776828441?text=${encodeURIComponent(fullMessage)}`;
+
+    window.open(whatsappURL, "_blank");
+
+    setStatus("✅ Redirection vers WhatsApp...");
+
+    // Reset (optionnel)
+    setForm({
+      nom: "",
+      telephone: "",
+      service: "",
+      message: "",
+    });
   };
 
   return (
     <section className="contact" id="contact">
-      <h2>Contact</h2>
+      <h2>📞 Contactez-nous</h2>
 
-      <input
-        type="text"
-        placeholder="Votre message..."
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-        aria-label="Votre message"
-      />
+      <div className="contact-form">
+        <input
+          type="text"
+          name="nom"
+          placeholder="Votre nom *"
+          value={form.nom}
+          onChange={handleChange}
+        />
 
-      <button onClick={sendMessage}>Envoyer</button>
+        <input
+          type="tel"
+          name="telephone"
+          placeholder="Votre numéro WhatsApp *"
+          value={form.telephone}
+          onChange={handleChange}
+        />
 
-      {status && <p className="status">{status}</p>} {/* Affichage du statut */}
+        <select
+          name="service"
+          value={form.service}
+          onChange={handleChange}
+        >
+          <option value="">Choisir un service</option>
+          <option>Création de site web</option>
+          <option>Application web</option>
+          <option>Plateforme énergétique</option>
+          <option>Design graphique</option>
+          <option>Maintenance & support</option>
+        </select>
 
-      <p>Email : <a href="mailto:issakamara958@gmail.com">issakamara958@gmail.com</a></p>
+        <textarea
+          name="message"
+          placeholder="Décrivez votre besoin..."
+          value={form.message}
+          onChange={handleChange}
+          rows="5"
+        />
+
+        <button onClick={sendMessage}>
+          Envoyer via WhatsApp
+        </button>
+
+        {status && <p className="status">{status}</p>}
+      </div>
+
+      <p className="email">
+        📧 Email :{" "}
+        <a href="mailto:issakamara958@gmail.com">
+          issakamara958@gmail.com
+        </a>
+      </p>
     </section>
   );
 };
