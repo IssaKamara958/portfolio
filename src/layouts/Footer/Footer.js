@@ -20,8 +20,8 @@ const Footer = () => {
         <div className="footer-links">
           <h3>Navigation</h3>
           <a href="/">Accueil</a>
-          <a href="/#projects">Projets</a>
-          <a href="/#skills">Compétences</a>
+          <a href="https://issa-kamara-portfolio-3d.web.app/#projects">Projets</a>
+          <a href="https://issa-kamara-portfolio-3d.web.app/#skills">Compétences</a>
           <a href="/#contact">Contact</a>
         </div>
 
