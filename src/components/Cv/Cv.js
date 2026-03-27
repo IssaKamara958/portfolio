@@ -4,7 +4,7 @@ import jsPDF from 'jspdf';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './Cv.css';
-import issa from '../../assets/images/myopie.jpg';
+import issa from '../../assets/images/myopi.jpg';
 
 const Cv = () => {
   const cvRef = useRef();
