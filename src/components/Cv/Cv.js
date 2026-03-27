@@ -25,19 +25,15 @@ const Cv = () => {
       const pdfWidth = pdf.internal.pageSize.getWidth();
       const pdfHeight = pdf.internal.pageSize.getHeight();
 
-      // Gestion multi-page si le CV est long
       const imgProps = pdf.getImageProperties(imgData);
       const imgRatio = imgProps.width / imgProps.height;
       let imgHeight = pdfWidth / imgRatio;
 
       if (imgHeight <= pdfHeight) {
-        // Si l'image tient sur une page
         pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, imgHeight);
       } else {
-        // Si l'image dépasse une page
         let heightLeft = imgHeight;
         let position = 0;
-
         while (heightLeft > 0) {
           pdf.addImage(imgData, "PNG", 0, -position, pdfWidth, imgHeight);
           heightLeft -= pdfHeight;
@@ -64,15 +60,10 @@ const Cv = () => {
   return (
     <div id="cv" className="cv-wrapper" data-aos="fade-up">
       <div className="cv" ref={cvRef}>
-        {/* ==== COLONNE GAUCHE ==== */}
         <div className="left">
           <img src={issa} alt="Issa KAMARA" />
           <h2>Issa KAMARA</h2>
-
-          <p className="tagline">
-            "Créer des expériences digitales modernes, utiles et accessibles"
-          </p>
-
+          <p className="tagline">"Créer des expériences digitales modernes, utiles et accessibles"</p>
           <p className="role">
             Développeur Frontend & UI/UX Designer <br />
             Créateur d’expériences web modernes (React / 3D) <br />
@@ -85,28 +76,15 @@ const Cv = () => {
           <p>📞 +221 77 682 84 41</p>
 
           <div className="section-title">Projets & Portfolio</div>
-
-          <a href="https://issa-kamara-portfolio-3d.web.app/" target="_blank" rel="noreferrer">
-            🌐 Portfolio 3D
-          </a>
-          <a href="https://chackor-shop.netlify.app/" target="_blank" rel="noreferrer">
-            🛒 Chackor Shop (E-commerce)
-          </a>
-          <a href="https://issa-portfeuil.netlify.app/" target="_blank" rel="noreferrer">
-            📄 Portfolio CV
-          </a>
-
-          {/* Projets dynamiques */}
+          <a href="https://issa-kamara-portfolio-3d.web.app/" target="_blank" rel="noreferrer">🌐 Portfolio 3D</a>
+          <a href="https://chackor-shop.netlify.app/" target="_blank" rel="noreferrer">🛒 Chackor Shop (E-commerce)</a>
+          <a href="https://issa-portfeuil.netlify.app/" target="_blank" rel="noreferrer">📄 Portfolio CV</a>
           {staticProjects.map(project => (
-            <a key={project.id} href={project.link} target="_blank" rel="noreferrer">
-              🚀 {project.title}
-            </a>
+            <a key={project.id} href={project.link} target="_blank" rel="noreferrer">🚀 {project.title}</a>
           ))}
 
           <div className="section-title">GitHub</div>
-          <a href="https://github.com/IssaKamara958" target="_blank" rel="noreferrer">
-            github.com/IssaKamara958
-          </a>
+          <a href="https://github.com/IssaKamara958" target="_blank" rel="noreferrer">github.com/IssaKamara958</a>
 
           <div className="section-title">Services maîtrisés</div>
           <ul>
@@ -119,20 +97,10 @@ const Cv = () => {
           </ul>
         </div>
 
-        {/* ==== COLONNE DROITE ==== */}
         <div className="right">
           <h1>Profil professionnel</h1>
-          <p>
-            Développeur frontend passionné basé à Thiès, je conçois des applications web modernes,
-            performantes et orientées expérience utilisateur. J’allie créativité artistique,
-            expertise technique et vision entrepreneuriale pour accompagner les particuliers,
-            PME et projets innovants dans leur transformation digitale.
-          </p>
-
-          <p>
-            Avec plus de 10 ans d’expérience en art visuel et 6 ans en entrepreneuriat
-            dans le café, j’apporte une approche unique mêlant design, émotion et efficacité.
-          </p>
+          <p>Développeur frontend passionné basé à Thiès, je conçois des applications web modernes, performantes et orientées expérience utilisateur. J’allie créativité artistique, expertise technique et vision entrepreneuriale pour accompagner les particuliers, PME et projets innovants dans leur transformation digitale.</p>
+          <p>Avec plus de 10 ans d’expérience en art visuel et 6 ans en entrepreneuriat dans le café, j’apporte une approche unique mêlant design, émotion et efficacité.</p>
 
           <h3>Projets clés</h3>
           <ul>
@@ -187,9 +155,7 @@ const Cv = () => {
       </div>
 
       <div style={{ textAlign: 'center', marginTop: '30px' }}>
-        <button id="downloadBtn" onClick={downloadPDF}>
-          📄 Télécharger le CV (PDF)
-        </button>
+        <button id="downloadBtn" onClick={downloadPDF}>📄 Télécharger le CV (PDF)</button>
       </div>
     </div>
   );
