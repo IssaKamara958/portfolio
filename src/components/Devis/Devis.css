@@ -1,49 +1,140 @@
-.devis-header {
+/* 🌍 GLOBAL */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #0a192f;
-  color: #64ffda;
-  padding: 2rem;
-  text-align: center;
+  color: #ccd6f6;
 }
 
+/* 🔷 HEADER */
+.devis-header {
+  background: linear-gradient(135deg, #0a192f, #112240);
+  color: #64ffda;
+  padding: 2.5rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(100, 255, 218, 0.2);
+}
+
+.devis-header h1 {
+  margin-bottom: 0.5rem;
+  font-size: 2.2rem;
+}
+
+.devis-header p {
+  color: #8892b0;
+  font-size: 1rem;
+}
+
+/* 🧱 SECTIONS */
+section {
+  padding: 2rem;
+  max-width: 1100px;
+  margin: 2rem auto;
+  background-color: #112240;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(2, 12, 27, 0.7);
+  transition: transform 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-5px);
+}
+
+/* 🧾 TITRES */
 h1, h2 {
   color: #64ffda;
 }
 
-section {
-  padding: 2rem;
-  max-width: 1100px;
-  margin: auto;
+h2 {
+  margin-bottom: 1rem;
+  border-left: 4px solid #64ffda;
+  padding-left: 10px;
 }
 
+/* 📋 LISTES */
 ul {
-  text-align: left;
-  padding-left: 1.2rem;
+  padding-left: 1.5rem;
+  line-height: 1.7;
 }
 
+/* 📊 TABLE */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 1rem 0;
+  margin: 1.5rem 0;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
+/* HEADERS */
+th {
+  background-color: #1a2e4a;
+  color: #64ffda;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+/* CELLS */
 th, td {
-  border: 1px solid #64ffda;
-  padding: 0.75rem;
+  border: 1px solid rgba(100, 255, 218, 0.2);
+  padding: 0.9rem;
   text-align: left;
 }
 
-th {
-  background-color: #112240;
+/* ROW HOVER */
+tbody tr:hover {
+  background-color: rgba(100, 255, 218, 0.05);
+  transition: 0.3s;
 }
 
+/* TOTAL ROW */
 .total {
   font-weight: bold;
-  background-color: #1a2e4a;
+  background-color: #233554;
+  color: #64ffda;
+  font-size: 1.05rem;
 }
 
+/* 🔘 BUTTON */
+button {
+  background-color: transparent;
+  color: #64ffda;
+  border: 1px solid #64ffda;
+  padding: 0.6rem 1.2rem;
+  margin-top: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #64ffda;
+  color: #0a192f;
+}
+
+/* 🔻 FOOTER */
 .devis-footer {
   background-color: #0a192f;
-  color: #64ffda;
+  color: #8892b0;
   text-align: center;
   padding: 1rem;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(100, 255, 218, 0.2);
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+  section {
+    padding: 1.5rem;
+  }
+
+  th, td {
+    font-size: 0.85rem;
+    padding: 0.6rem;
+  }
+
+  .devis-header h1 {
+    font-size: 1.6rem;
+  }
 }
