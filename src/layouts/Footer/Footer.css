@@ -1,70 +1,149 @@
-/* src/layouts/Footer.css */
-
+/* 🌍 FOOTER GLOBAL */
 footer {
-  background-color: #0a192f; 
-  color: #e0e0e0;
-  padding: 40px 20px;
-  text-align: center;
+  background: linear-gradient(135deg, #020c1b, #0a192f);
+  color: #ccd6f6;
+  padding: 3rem 1rem 1.5rem;
   font-size: 0.9rem;
 }
 
+/* 🧱 CONTAINER */
 .footer-content {
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
-.social-icons a {
-  color: #e0e0e0;
-  margin: 0 10px;
-  font-size: 1.5rem;
-  transition: color 0.3s ease-in-out;
+/* 🔷 GRID STRUCTURE (si utilisé avec nouveau footer) */
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
 }
 
-.social-icons a:hover {
+/* 🧠 TITRES */
+footer h2,
+footer h3 {
   color: #64ffda;
+  margin-bottom: 10px;
 }
 
+/* 🔗 LIENS */
 .footer-links a {
-  color: #e0e0e0;
-  margin: 0 10px;
+  display: inline-block;
+  color: #ccd6f6;
+  margin: 6px 10px;
   text-decoration: none;
-  transition: color 0.3s ease-in-out;
+  transition: all 0.3s ease;
 }
 
 .footer-links a:hover {
   color: #64ffda;
+  transform: translateX(3px);
 }
 
+/* 🌐 SOCIAL */
+.social-icons a,
+.footer-social a {
+  color: #ccd6f6;
+  margin: 0 10px;
+  font-size: 1.4rem;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover,
+.footer-social a:hover {
+  color: #64ffda;
+  transform: scale(1.2);
+}
+
+/* 📝 COMMENTS SECTION */
 .comments-section {
   margin-top: 30px;
+  padding: 1.5rem;
+  background-color: #112240;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(2, 12, 27, 0.5);
 }
 
+/* TITRE */
 .comments-section h3 {
-  color: #e0e0e0;
   margin-bottom: 15px;
 }
 
+/* TEXTAREA */
 .comments-section textarea {
-  width: 80%;
+  width: 100%;
   max-width: 500px;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  border: 1px solid #64ffda;
-  background-color: #112240;
-  color: #e0e0e0;
+  padding: 0.8rem;
+  border-radius: 6px;
+  border: 1px solid rgba(100, 255, 218, 0.3);
+  background-color: #0a192f;
+  color: #ccd6f6;
+  resize: none;
+  transition: all 0.3s ease;
 }
 
+/* FOCUS */
+.comments-section textarea:focus {
+  outline: none;
+  border-color: #64ffda;
+  box-shadow: 0 0 6px rgba(100, 255, 218, 0.3);
+}
+
+/* 🔘 BUTTON */
 .comments-section button {
-  padding: 10px 20px;
-  background-color: #64ffda;
+  margin-top: 10px;
+  padding: 0.7rem 1.4rem;
+  background: #64ffda;
   color: #0a192f;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
+  transition: all 0.3s ease;
 }
 
+/* HOVER BUTTON */
 .comments-section button:hover {
-  background-color: #52e6c7;
+  background: #52e6c7;
+  transform: scale(1.05);
+}
+
+/* 🟢 WHATSAPP BUTTON (si utilisé) */
+.whatsapp-btn {
+  display: inline-block;
+  margin-top: 10px;
+  background: #25D366;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+  background: #1ebe5d;
+}
+
+/* ⚖️ FOOTER BOTTOM */
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  color: #8892b0;
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+  .footer-container {
+    text-align: center;
+  }
+
+  .footer-links a {
+    display: block;
+    margin: 5px 0;
+  }
+
+  .comments-section textarea {
+    width: 100%;
+  }
 }
