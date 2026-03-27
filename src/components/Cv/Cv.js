@@ -19,59 +19,51 @@ const Cv = () => {
     button.style.display = "none";
     await new Promise(resolve => setTimeout(resolve, 300));
 
-    html2canvas(element, { scale: 2, useCORS: true }).then(canvas => {
+    html2canvas(element, { scale: 3, useCORS: true }).then(canvas => {
       const imgData = canvas.toDataURL("image/png");
       const pdf = new jsPDF("p", "mm", "a4");
       const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
-      pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+      const pdfHeight = pdf.internal.pageSize.getHeight();
+
+      // Gestion multi-page si le CV est long
+      const imgProps = pdf.getImageProperties(imgData);
+      const imgRatio = imgProps.width / imgProps.height;
+      let imgHeight = pdfWidth / imgRatio;
+
+      if (imgHeight <= pdfHeight) {
+        // Si l'image tient sur une page
+        pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, imgHeight);
+      } else {
+        // Si l'image dépasse une page
+        let heightLeft = imgHeight;
+        let position = 0;
+
+        while (heightLeft > 0) {
+          pdf.addImage(imgData, "PNG", 0, -position, pdfWidth, imgHeight);
+          heightLeft -= pdfHeight;
+          position += pdfHeight;
+          if (heightLeft > 0) pdf.addPage();
+        }
+      }
+
       pdf.save("CV_Issa_Kamara.pdf");
       button.style.display = "inline-block";
     });
   };
 
   const staticProjects = [
-  {
-    id: 1,
-    title: "Senegal Energy Xool",
-    link: "https://senegal-energy-xool.lovable.app",
-  },
-  {
-    id: 2,
-    title: "Empreinte Parfumée",
-    link: "https://empreinte-parfumee.lovable.app",
-  },
-  {
-    id: 3,
-    title: "GLX Thiès Senegal",
-    link: "https://glx-thies-senegal.lovable.app",
-  },
-  {
-    id: 4,
-    title: "Guide Enseignement",
-    link: "https://guide-enseignement.lovable.app",
-  },
-  {
-    id: 5,
-    title: "Precis Tag",
-    link: "https://precis-tag.lovable.app",
-  },
-  {
-    id: 6,
-    title: "Touhfatou Délices",
-    link: "https://touhfatou-delices-152604-c0083.web.app/",
-  },
-  {
-    id: 7,
-    title: "Le Magnifique",
-    link: "#",
-  },
-];
+    { id: 1, title: "Senegal Energy Xool", link: "https://senegal-energy-xool.lovable.app" },
+    { id: 2, title: "Empreinte Parfumée", link: "https://empreinte-parfumee.lovable.app" },
+    { id: 3, title: "GLX Thiès Senegal", link: "https://glx-thies-senegal.lovable.app" },
+    { id: 4, title: "Guide Enseignement", link: "https://guide-enseignement.lovable.app" },
+    { id: 5, title: "Precis Tag", link: "https://precis-tag.lovable.app" },
+    { id: 6, title: "Touhfatou Délices", link: "https://touhfatou-delices-152604-c0083.web.app/" },
+    { id: 7, title: "Le Magnifique", link: "#" },
+  ];
 
   return (
     <div id="cv" className="cv-wrapper" data-aos="fade-up">
       <div className="cv" ref={cvRef}>
-
         {/* ==== COLONNE GAUCHE ==== */}
         <div className="left">
           <img src={issa} alt="Issa KAMARA" />
@@ -94,29 +86,22 @@ const Cv = () => {
 
           <div className="section-title">Projets & Portfolio</div>
 
-<a href="https://issa-kamara-portfolio-3d.web.app/" target="_blank" rel="noreferrer">
-  🌐 Portfolio 3D
-</a>
+          <a href="https://issa-kamara-portfolio-3d.web.app/" target="_blank" rel="noreferrer">
+            🌐 Portfolio 3D
+          </a>
+          <a href="https://chackor-shop.netlify.app/" target="_blank" rel="noreferrer">
+            🛒 Chackor Shop (E-commerce)
+          </a>
+          <a href="https://issa-portfeuil.netlify.app/" target="_blank" rel="noreferrer">
+            📄 Portfolio CV
+          </a>
 
-<a href="https://chackor-shop.netlify.app/" target="_blank" rel="noreferrer">
-  🛒 Chackor Shop (E-commerce)
-</a>
-
-<a href="https://issa-portfeuil.netlify.app/" target="_blank" rel="noreferrer">
-  📄 Portfolio CV
-</a>
-
-{/* Projets dynamiques */}
-{staticProjects.map((project) => (
-  <a
-    key={project.id}
-    href={project.link}
-    target="_blank"
-    rel="noreferrer"
-  >
-    🚀 {project.title}
-  </a>
-))}
+          {/* Projets dynamiques */}
+          {staticProjects.map(project => (
+            <a key={project.id} href={project.link} target="_blank" rel="noreferrer">
+              🚀 {project.title}
+            </a>
+          ))}
 
           <div className="section-title">GitHub</div>
           <a href="https://github.com/IssaKamara958" target="_blank" rel="noreferrer">
@@ -136,7 +121,6 @@ const Cv = () => {
 
         {/* ==== COLONNE DROITE ==== */}
         <div className="right">
-
           <h1>Profil professionnel</h1>
           <p>
             Développeur frontend passionné basé à Thiès, je conçois des applications web modernes,
@@ -199,7 +183,6 @@ const Cv = () => {
             <li>🚀 Approche orientée expérience utilisateur</li>
             <li>🌍 Vision : digitaliser les PME au Sénégal</li>
           </ul>
-
         </div>
       </div>
 
