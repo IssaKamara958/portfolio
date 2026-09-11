@@ -4,15 +4,7 @@
 
 /* index.css - Base globale propre pour ton app React */
 
-:root {
-  --primary-color: #4F46E5; /* violet élégant */
-  --secondary-color: #10B981; /* vert doux pour accents */
-  --background-color: #F9F5F2; /* beige chaud */
-  --dark-color: #0a192f;
-  --text-color: #1F2937; /* gris foncé */
-  --accent-orange: #F59E0B; /* orange chaud */
-  --accent-rose: #E11D48; /* rose vif */
-}
+:root { --navy: #071b24; --ink: #102d35; --muted: #5d7478; --accent: #73e6d2; --accent-deep: #087b78; --background-color: #f5f8f6; --surface: #ffffff; --line: #d7e4e0; --transition-speed: .2s; }
 
 * {
   margin: 0;
@@ -26,9 +18,9 @@ html {
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Manrope', 'Segoe UI', sans-serif;
   background-color: var(--background-color);
-  color: var(--text-color);
+  color: var(--ink);
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -40,7 +32,7 @@ a {
 }
 
 a:hover {
-  color: var(--primary-color);
+  color: var(--accent-deep);
 }
 
 img {
@@ -62,9 +54,7 @@ button {
   transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', serif;
-}
+h1, h2, h3, h4, h5, h6 { font-family: 'Manrope', 'Segoe UI', sans-serif; }
 
 input, textarea, select {
   font-family: inherit;
@@ -75,12 +65,7 @@ input, textarea, select {
   width: 100%;
 }
 
-section {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  padding: 20px;
-  border-radius: 8px;
-}
+section { margin-bottom: 0; }
 
 code {
   font-family: 'Courier New', Courier, monospace;

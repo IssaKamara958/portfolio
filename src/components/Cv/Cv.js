@@ -48,13 +48,13 @@ const Cv = () => {
   };
 
   const staticProjects = [
-    { id: 1, title: "Senegal Energy Xool", link: "https://senegal-energy-xool.lovable.app" },
-    { id: 2, title: "Empreinte Parfumée", link: "https://empreinte-parfumee.lovable.app" },
-    { id: 3, title: "GLX Thiès Senegal", link: "https://glx-thies-senegal.lovable.app" },
-    { id: 4, title: "Guide Enseignement", link: "https://guide-enseignement.lovable.app" },
-    { id: 5, title: "Precis Tag", link: "https://precis-tag.lovable.app" },
-    { id: 6, title: "Touhfatou Délices", link: "https://touhfatou-delices-152604-c0083.web.app/" },
-    { id: 7, title: "Le Magnifique", link: "#" },
+    { id: 1, title: "Senegal Energy Xool", link: "https://issa-kamara-portfolio-3d.web.app/" },
+    { id: 2, title: "Empreinte Parfumée", link: "https://issa-kamara-portfolio-3d.web.app/" },
+    { id: 3, title: "GLX Thiès Senegal", link: "https://issa-kamara-portfolio-3d.web.app/" },
+    { id: 4, title: "Guide Enseignement", link: "https://issa-kamara-portfolio-3d.web.app/" },
+    { id: 5, title: "Precis Tag", link: "https://issa-kamara-portfolio-3d.web.app/" },
+    { id: 6, title: "Touhfatou Délices", link: "https://issa-kamara-portfolio-3d.web.app/" },
+    { id: 7, title: "Le Magnifique", link: "https://issa-kamara-portfolio-3d.web.app/" },
   ];
 
   return (
@@ -77,7 +77,7 @@ const Cv = () => {
 
           <div className="section-title">Projets & Portfolio</div>
           <a href="https://issa-kamara-portfolio-3d.web.app/" target="_blank" rel="noreferrer">🌐 Portfolio 3D</a>
-          <a href="https://chackor-shop.netlify.app/" target="_blank" rel="noreferrer">🛒 Chackor Shop (E-commerce)</a>
+          <a href="https://issa-kamara-portfolio-3d.web.app/" target="_blank" rel="noreferrer">🛒 Chackor Shop (E-commerce)</a>
           <a href="https://issa-portfeuil.netlify.app/" target="_blank" rel="noreferrer">📄 Portfolio CV</a>
           {staticProjects.map(project => (
             <a key={project.id} href={project.link} target="_blank" rel="noreferrer">🚀 {project.title}</a>

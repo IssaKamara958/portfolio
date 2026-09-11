@@ -24,7 +24,7 @@ const Header = () => {
 
           <div className="buttons">
             <a
-              href="https://github.com/IssaKamara958"
+              href="https://issa-kamara-portfolio-3d.web.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="work-btn"

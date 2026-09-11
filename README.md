@@ -1,180 +1,120 @@
-# portfolio
-Mon Portfolio
-# Portfolio d'Issa Kamara
+# Issa KAMARA — Portfolio professionnel
 
-![Portfolio Screenshot](https://issa-portfeuil.netlify.app/screenshot.png)  
-*Capture d’écran du portfolio en ligne.*
+Portfolio professionnel d'**Issa KAMARA**, informaticien basé à Thiès, Sénégal.
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/d2ac08b6-29e7-4b4a-9a87-0e63ec2a08cd/deploy-status)](https://app.netlify.com/projects/issa-portfeuil/deploys)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![React](https://img.shields.io/badge/React-17.0-blue?logo=react)](https://reactjs.org/)
-[![GitHub issues](https://img.shields.io/github/issues/IssaKamara958/portfolio)](https://github.com/IssaKamara958/portfolio/issues)
+> **Informaticien expérimenté · Support IT · Systèmes · Réseaux · Digitalisation**
 
----
+Le site présente son parcours informatique, ses compétences techniques, ses projets métiers, son CV et son approche de résolution de problèmes. Les projets techniques sont regroupés dans le [Portfolio 3D](https://issa-kamara-portfolio-3d.web.app/).
 
-## Table des matières
-- [À propos](#à-propos)
-- [Technologies utilisées](#technologies-utilisées)
-- [Fonctionnalités](#fonctionnalités)
-- [Structure du projet](#structure-du-projet)
-- [Installation et exécution](#installation-et-exécution)
-- [Déploiement sur Netlify](#déploiement-sur-netlify)
-- [Connexion SSH avec GitHub](#connexion-ssh-avec-github)
-- [Contribuer](#contribuer)
-- [Remerciements](#remerciements)
-- [Licence](#licence)
-- [Contact](#contact)
+## Liens
 
----
+- **Site professionnel** : https://issa-portfeuil.netlify.app/
+- **Portfolio projets / 3D** : https://issa-kamara-portfolio-3d.web.app/
+- **GitHub** : https://github.com/IssaKamara958
+- **LinkedIn** : https://www.linkedin.com/in/issakamara/
+- **Contact** : issakamara958@gmail.com
 
-## À propos
-Ce projet est le **portfolio professionnel d'Issa Kamara**, développeur web frontend et manager sénégalais.  
-Il présente son parcours, ses compétences, ses projets, ainsi qu'un formulaire de contact et une section de devis pour ses services.  
-Le portfolio est conçu avec **React.js**, et utilise **React Router**, **Framer Motion**, et **React Helmet** pour une expérience utilisateur dynamique et optimisée SEO.
+## Positionnement
 
----
+Le portfolio met en avant :
 
-## Technologies utilisées
-- **Frontend** : React.js, HTML5, CSS3
-- **Backend-as-a-Service** : Supabase (pour la gestion du livre d'or)
-- **Routing** : react-router-dom
-- **Animations** : framer-motion
-- **SEO & meta tags** : react-helmet
-- **Versioning** : Git & GitHub
-- **Déploiement** : Netlify
-- **Outils** : VS Code, Node.js, npm, Gemini, FirebaseStudio, ChatGPT
-
----
+- plus de 13 ans d'expérience informatique ;
+- le support utilisateurs, le matériel et la maintenance ;
+- les environnements Windows et le diagnostic ;
+- les réseaux IP, LAN, Wi-Fi, DHCP et DNS ;
+- la digitalisation et les applications métiers ;
+- le développement web comme compétence complémentaire ;
+- une montée en compétence progressive en vidéosurveillance IP et systèmes connectés.
 
 ## Fonctionnalités
-- Navigation fluide via **Navbar**
-- Sections dynamiques : Header, About, CV, Projets, Compétences, Contact, Devis, Footer
-- Animations au scroll avec **Framer Motion**
-- SEO optimisé avec **React Helmet**
-- Formulaire de contact pour prise de contact rapide
-- Page Devis pour demandes de devis personnalisés
-- Section **Livre d'or** avec authentification GitHub via Supabase
 
----
+- Navigation responsive et accessible.
+- Sections À propos, IT & Systèmes, Compétences, Projets, Expérience, CV et Contact.
+- Formulaire de contact compatible avec Netlify Forms.
+- Métadonnées SEO, Open Graph, données structurées JSON-LD, `robots.txt` et `sitemap.xml`.
+- Génération locale d'un CV PDF nommé `Issa-Kamara-CV-Informaticien-2026.pdf`.
+- Design professionnel responsive avec prise en compte de `prefers-reduced-motion`.
+- Redirection de toutes les présentations de projets vers le Portfolio 3D.
 
-## Structure du projet
-issa-portfolio/
-│
-├── public/
-│ ├── index.html
-│ └── favicon.ico
-│
-├── src/
-│ ├── components/
-│ │ ├── About/About.js
-│ │ ├── Auth/Auth.js
-│ │ ├── Guestbook/Guestbook.js
-│ │ ├── Guestbook/GuestbookComment.js
-│ │ ├── Contact/Contact.js
-│ │ ├── Cv/Cv.js
-│ │ ├── Devis/Devis.js
-│ │ ├── Footer.js
-│ │ ├── Header/Header.js
-│ │ ├── Navbar.js
-│ │ ├── Projects.js
-│ │ └── Skills/Skills.js
-│ │
-│ ├── App.js
-│ ├── App.css
-│ └── index.js
-│
-├── .gitignore
-├── package.json
-└── README.md
+## Stack technique
 
----
+- React 18
+- React Router
+- React Helmet
+- JavaScript, HTML5 et CSS3
+- jsPDF pour la génération du CV
+- React Icons, Framer Motion et AOS disponibles dans le projet
+- Netlify pour le déploiement et le formulaire
+- Supabase conservé pour les fonctionnalités historiques du dépôt
 
-## Installation et exécution
+## Installation locale
 
-1. **Cloner le dépôt :**
+Prérequis : Node.js et npm.
+
 ```bash
 git clone git@github.com:IssaKamara958/portfolio.git
 cd portfolio
-```
-2. **Installer les dépendances :**
-```bash
 npm install
-```
-3. **Lancer le serveur de développement :**
-```bash
 npm start
 ```
-Le site sera accessible sur http://localhost:3000
 
----
+Le serveur de développement est disponible sur http://localhost:3000.
 
-## Déploiement sur Netlify
-1. **Créer un build du projet :**
-```bash
-npm run build
-```
-2. **Déployer le dossier `build/` sur Netlify** via l’interface ou l'intégration GitHub.
-3. **Configurer le domaine personnalisé** si nécessaire.
+## Scripts
 
----
-
-## Connexion SSH avec GitHub
-Pour pousser vers GitHub sans mot de passe :
-
-1. **Générer une clé SSH** si ce n’est pas déjà fait :
 ```bash
-ssh-keygen -t ed25519 -C "issakamara958@gmail.com"
-```
-2. **Copier le contenu de la clé publique** `id_ed25519.pub` :
-```bash
-cat ~/.ssh/id_ed25519.pub
-```
-3. **Ajouter la clé sur GitHub** :
-   - *Settings → SSH and GPG keys → New SSH Key → coller la clé*
-4. **Modifier l’URL du dépôt pour SSH** :
-```bash
-git remote set-url origin git@github.com:IssaKamara958/portfolio.git
-```
-5. **Tester la connexion** :
-```bash
-ssh -T git@github.com
+npm start                 # serveur de développement
+npm run build             # build de production
+npm test                  # tests React en mode interactif
+CI=true npm test -- --watchAll=false
 ```
 
----
+Le projet ne contient actuellement aucun test automatisé ; la commande de test termine donc avec le statut « aucun test trouvé ».
 
-## Contribuer
-1.  **Fork** le projet
-2.  Crée une branche (`git checkout -b feature/nom-de-ta-fonctionnalité`)
-3.  Commit tes changements (`git commit -m 'Ajout de ma fonctionnalité'`)
-4.  Push (`git push origin feature/nom-de-ta-fonctionnalité`)
-5.  Crée une **Pull Request**
+## Déploiement Netlify
 
----
+Le dépôt peut être relié directement à Netlify :
 
-## Remerciements
+- **Build command** : `npm run build`
+- **Publish directory** : `build`
+- **Node** : version LTS recommandée
 
-Je tiens à exprimer ma profonde gratitude envers les personnes et les outils qui ont été essentiels à la réalisation de ce projet :
+Après chaque push sur la branche de production, Netlify reconstruit et publie le dossier `build/`.
 
-*   **Mamadou Diagne (Genova - Dofbi)** : Un professeur et un mentor dont l'enseignement et les conseils ont été inestimables pour guider mes pas dans le monde du développement.
-*   **Les outils d'IA** qui m'ont accompagné au quotidien :
-    *   **Gemini** & **FirebaseStudio** pour leur assistance technique.
-    *   **ChatGPT**, mon fidèle compagnon de route.
-*   **Les technologies et services** qui ont rendu ce projet possible :
-    *   **Supabase** et **Netlify** pour leurs plateformes robustes et simples d'utilisation.
+Le formulaire de contact utilise l'attribut `data-netlify="true"`. Après déploiement, l'identité du formulaire et les notifications doivent être vérifiées dans le tableau de bord Netlify.
 
----
+## Structure principale
+
+```text
+public/
+├── assets/images/       # images publiques
+├── index.html           # métadonnées globales et Open Graph
+├── robots.txt
+└── sitemap.xml
+
+src/
+├── components/          # composants historiques et réutilisables
+├── layouts/
+│   ├── Navbar/
+│   └── Footer/
+├── pages/
+│   ├── Home.js          # page professionnelle principale
+│   └── Home.css
+├── App.js
+└── index.css
+```
+
+## Notes de contenu
+
+Les dates, expériences, formations et certifications doivent rester conformes au CV réel. Les compétences en sécurité électronique sont présentées comme une montée en compétence ou un laboratoire personnel lorsqu'elles ne correspondent pas encore à une expérience professionnelle confirmée.
 
 ## Licence
-Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 
----
+Ce projet est distribué sous licence MIT. Voir [LICENSE](LICENSE).
 
-## Contact
-- **Nom** : Issa Kamara
-- **Email** : issakamara958@gmail.com
-- **Portfolio en ligne** : https://issa-portfeuil.netlify.app
-- **Téléphone** : +221 77 682 84 41
-- **LinkedIn** : [linkedin.com/in/issakamara](https://www.linkedin.com/in/issakamara)
-- **GitHub** : [github.com/IssaKamara958](https://github.com/IssaKamara958)
+## Auteur
 
-> « Si on ne met rien sur la table, on n’a rien sur cette même table. » — Issa Kamara
+**Issa KAMARA** — Thiès, Sénégal
+
+Email : [issakamara958@gmail.com](mailto:issakamara958@gmail.com)
+Téléphone : +221 77 682 84 41

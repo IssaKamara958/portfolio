@@ -5,6 +5,11 @@
 /.pnp
 .pnp.js
 
+# local environment files
+.env
+.env.*
+!.env.example
+
 # testing
 /coverage
 
@@ -13,6 +18,12 @@
 
 # misc
 .DS_Store
+.AppleDouble
+.LSOverride
+.vscode/
+.idea/
+*.swp
+*.swo
 .env.local
 .env.development.local
 .env.test.local
@@ -21,3 +32,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# local Netlify and tool output
+.netlify/
+*.log
